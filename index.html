@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Document sans nom</title>
+<link href="style/reset.css" rel="stylesheet" type="text/css">
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<script src="/scripts/jquery-1.8.2.min.js" /></script>
+<script src="scripts/generator.js" /></script>
+<script src="scripts/jscolor/jscolor.js" /></script>
+
+</head>
+
+<body>
+<div id="conteneur">
+    <nav>
+    	<div>
+        <header>Générateur de Charte</header>
+        <article>
+        <form method="POST" action="geneCharte.php">
+        <fieldset id="menu_titre1">
+	<a href="#" onClick="javascript:replieFieldSet();return false;"><legend >H1 - Grand titre</legend></a>
+    <label>Font-family</label> <select id="texte_fontFamilyTexte" onChange="t();" name="fontFamily"> <option>Verdana, Geneva, sans-serif</option><option>Georgia, "Times New Roman", Times, serif</option><option>"Trebuchet MS", Arial, Helvetica, sans-serif</option><option>"Museo Slab"</option></select><br>
+	
+    <label>Taille</label> <input type="range" name="fontSize" id="texte_tailleTexte" value="12" min="10" max="72" oninput="document.getElementById('rangeOutput').textContent=value" onChange="t();" /><span id="rangeOutput">12</span><br>
+    
+    <label>Line-Height</label> <input type="range" name="lineHeight" id="texte_lineHeightTexte" value="1" min="0" max="3" step="0.25" oninput="document.getElementById('rangeOutput2').textContent=value" onChange="t();"/><span id="rangeOutput2">1</span>em<br>
+    
+    <label>Font-weight</label> <select name="fontWeight" id="texte_fontWeightTexte" onChange="t();"><option>normal</option><option>bold</option><option>lighter</option><option>300</option><option>500</option></select><br>
+ 
+    <label>Couleur</label> <input class="color" onChange="t();" id="texte_colorTexte" value="#333333" name="color">
+    
+   
+         <div id="plusOptions">
+            <label>Interlettrage</label> <input type="range" name="letterSpacing" id="texte_interLettrageTexte" value="0" min="-1" max="1" step="0.25" oninput="document.getElementById('rangeOutput3').textContent=value" onChange="t();"/><span id="rangeOutput3">1</span>em<br>
+            
+            <label>word spacing </label><input type="range" name="wordSpacing" id="texte_wordSpacingTexte" value="0" min="-1" max="1" step="0.25" oninput="document.getElementById('rangeOutput4').textContent=value" onChange="t();"/><span id="rangeOutput4">1</span>em<br>
+             <label>text-decoration</label> <select id="texte_txtDecoTexte" name="textDecoration" onChange="t();"/><option>none</option><option>underline</option><option>overline</option><option>line-through</option></select><br>
+               <label>text-transform</label> <select id="texte_txtTransTexte" onChange="t();" name="textTransform"/><option>none</option><option>capitalize</option><option>lowercase</option><option>uppercase</option></select><br>
+                 
+        </div>
+    <br>
+   <a href="#" onClick="javascript:lesOptions();return false;" id="AplusOptions"> Plus d'options </a>
+       <br>
+
+              <input type="submit" value="css" />             <input type="button" name="Print" value="imprimer la page" onClick="javascript:PrintDivData('ventre');" Runat="Server" />
+                          
+    </fieldset>
+</form>
+
+
+        
+        
+        </article>
+        </div>
+    </nav>
+    
+    <section>
+        <header><a href="#" onClick="javascript:laGrille();return false;" id='affGrille'>Afficher Grille</a></header>
+        <article id="ventre" style="background-image:none;">
+        <span class="titrePages"> Typographies </span>
+        <h1 id="texte1"> H1- Mon Grand titre 1- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis, tellus nec mattis ullamcorper, dui lectus posuere nibh, in dignissim tellus nulla ac lorem.</h1>
+        <span id="recap_texte"></span>
+        </article>
+    </section>
+</div>
+
+</body>
+</html>
